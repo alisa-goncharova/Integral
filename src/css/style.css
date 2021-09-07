@@ -158,3 +158,24 @@
     /*color: #0061FF;*/
     background-color: #fff;
 }
+/*.header__burger span, .header__burger span:before, .header__burger span:after{*/
+/*    display: block;*/
+/*    height: 2px;*/
+/*    width: 18px;*/
+/*    position: absolute;*/
+/*    left: 50%;*/
+/*    margin-left: -9px;*/
+/*    top: 50%;*/
+/*    margin-top: -1px;*/
+/*    background-color: #333;*/
+/*}*/
+/*.header__burger span:before{*/
+/*    content: '';*/
+/*    transition: all 0.2s;*/
+/*    margin-top: -5px;*/
+/*}*/
+/*.header__burger span:after{*/
+/*    content: '';*/
+/*    transition: all 02s;*/
+/*    margin-top: 3px;*/
+/*}*/

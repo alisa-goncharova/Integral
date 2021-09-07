@@ -5,9 +5,9 @@
     .header__logo{
         margin: 0 20px 0 0;
     }
-    .header__logo img {
-        width: 30px;
-    }
+    /*.header__logo img {*/
+    /*    width: 30px;*/
+    /*}*/
     .header__nav-item{
         margin: 0 20px 0 0;
     }
@@ -18,13 +18,29 @@
         padding: 40px 15px 216px 15px;
     }
 }
-
-@media(max-width: 490px){
+@media(max-width: 500px){
     .header{
         justify-content: space-between;
     }
     .header__navs{
-        display: flex;
-        flex-direction: column;
+        display: none;
     }
 }
+/*@media(max-width: 490px){*/
+/*    .header{*/
+/*        justify-content: space-between;*/
+/*    }*/
+/*    .header__navs{*/
+/*        display: flex;*/
+/*        flex-direction: column;*/
+/*    }*/
+/*}*/
+/*разметка для моделей iPhone – iPhone X, iPhone Xs, iPhone 11 Pro и iPhone 12/12 Pro.*/
+/*@media only screen*/
+/*and (device-width: 375px)*/
+/*and (device-height: 812px)*/
+/*and (-webkit-device-pixel-ratio: 3) {*/
+/*    .header {*/
+/*        padding: 48px 15px 13px 15px;*/
+/*    }*/
+/*}*/
