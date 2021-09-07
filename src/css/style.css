@@ -34,14 +34,14 @@
     margin: 0 50px 0 0;
 }
 .header__nav-item:hover{
- color: #0061FF;
+    color: #0061FF;
 }
 .header__nav-item:last-child{
     margin: 0;
 }
 .header__auth{
-display: flex;
-align-items: center;
+    display: flex;
+    align-items: center;
 }
 .auth__order-btn{
     padding: 10px 20px 10px 20px;
@@ -70,18 +70,22 @@ align-items: center;
 }
 .auth__sign-btn svg{
     width: 25px;
-}
-.auth__sign-btn svg{
-    fill: #0061FF;
-}
-.auth__sign-btn svg:hover{
-    fill: #0038C9;
     transition: 0.8s;
+}
+.auth__sign-btn svg:hover .auth__sign-btn-one{
+    stop-color: #0061FE;
+}
+.auth__sign-btn svg:hover .auth__sign-btn-two{
+    stop-color: #0038C9;
+}
+.auth__sign-btn svg:active .auth__sign-btn-one{
+    stop-color: #0038C9;
+}
+.auth__sign-btn svg:active .auth__sign-btn-two{
+    stop-color: #0038C9;
 }
 .dictionary{
     padding: 40px 165px 216px 165px;
-    /*background-color: #fbfcff;*/
-    /*background-color: rgba(0, 97, 254, 0.2);*/
 }
 .dictionary__title{
     font: 700 16px 'Monseratt';
@@ -98,15 +102,59 @@ align-items: center;
 .dictionary__search input{
     border: 0;
     border-bottom: 1px solid #CCDFFF;
-    background: url(../img/dictionary/search.svg) no-repeat 95%;;
-    /*line-height: 38px;*/
-    font: 400 14px 'Monseratt';
-    /*background: #E5E5E5;*/
-}
-input{
-    line-height: 46px;
+    background: url(../img/dictionary/search-default.svg) no-repeat 95%;
+    line-height: 38px;
+    background-position: left;
+    padding-left: 25px;
+    font-family: 'Monseratt';
+    font-size: 14px;
+    width: 100%;
+    max-width: 350px;
+    transition: all 0.3s;
 }
 .dictionary__search input::placeholder{
     font: 400 14px 'Monseratt';
-    /*line-height: 19px;*/
+}
+.dictionary__search > .dictionary__search--active{
+    border-bottom: 1px solid #0061FF;
+    background: url(../img/dictionary/search-active.svg) no-repeat 95%;
+    background-position: right;
+    padding-left: 0;
+    padding-right: 25px;
+}
+.dictionary__content{
+    max-width: 730px;
+}
+.dictionary__list{
+    display: flex;
+    flex-wrap: wrap;
+}
+.dictionary__list-item{
+    font: 400 14px 'Monseratt';
+    color: #4675AC;
+    margin: 0 5px 0 5px;
+    padding: 2%;
+    margin: 1%;
+    border: 1px solid #CCDFFF;
+    border-radius: 8px;
+    transition: all 0.5s;
+    background: linear-gradient(to right, #fff, #fff);
+    cursor: pointer;
+    flex-grow: 1;
+    text-align: center;
+}
+.dictionary__list-item:hover{
+    background: linear-gradient(92.58deg, #0061FE 4.59%, #0038C9 90.68%);
+    box-shadow: 0px 5px 7px rgba(0, 97, 254, 0.21);
+    color: #fff;
+}
+.dictionary__list-item:active{
+    border: 1px solid #0061FF;
+    color: #fff;
+    background: linear-gradient(to right, #0038C9, #0038C9);
+}
+.dictionary__list-item.active{
+    border: 1px solid #0061FF;
+    /*color: #0061FF;*/
+    background-color: #fff;
 }
