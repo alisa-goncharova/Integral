@@ -6,6 +6,26 @@ order.onclick = function(){
     order.classList.toggle('disabled');
 }
 
+//нажатие на пункт списка
+let navBar = document.querySelector('.header__navs');
+let navLinks = document.querySelectorAll('.header__navs a');
+navBar.addEventListener('click', function(event) {
+    event.preventDefault(); // остановим работу ссылки, нам же надо поменять класс а не уйти со страницы
+    // Пробежимся по ссылкам и удалим active класс, если вдруг он где-то есть
+    navLinks.forEach(function(element, index) {
+        element.classList.remove('header__nav-item--active');
+    });
+    // Переключим для элемента на который кликнули класс
+    event.target.classList.add('header__nav-item--active');
+});
+// конец
+//нажатие на иконку аккаунта
+let signBtn = document.querySelector('.auth__sign-btn');
+
+signBtn.onclick = function(){
+    signBtn.classList.toggle('auth__order-btn--active');
+}
+
 // Поиск
 let input = document.querySelector('.dictionary__search input');
 // Реакция на введение символов
@@ -16,6 +36,8 @@ input.oninput = function (){
     } else {
         input.classList.remove('dictionary__search--active');
         input.setAttribute('placeholder', 'Начните писать...');
+        //удаление активной плитки
+        liTmp.classList.remove('active');
     }
 }
 
@@ -50,8 +72,14 @@ for(let liItem of liItems){
     }
 }
 //функция исключения для первого элемента
-liItems[0].onclick = function () {
-    liItems[0].classList.add('active');
-    input.value = liItems[0].textContent;
-    // input.oninput();
+// liItems[0].onclick = function () {
+//     liItems[0].classList.add('active');
+//     input.value = liItems[0].textContent;
+//     input.oninput();
+// }
+//адаптивное меню
+let burger = document.querySelector('.header__mobile-burger');
+
+burger.onclick = function(){
+    burger.classList.toggle('change');
 }

@@ -39,6 +39,12 @@
 .header__nav-item:last-child{
     margin: 0;
 }
+.header__nav-item--active{
+    color: #0061FF;
+}
+/*.header__nav-item:target{*/
+/*    color: red;*/
+/*}*/
 .header__auth{
     display: flex;
     align-items: center;
@@ -84,6 +90,12 @@
 .auth__sign-btn svg:active .auth__sign-btn-two{
     stop-color: #0038C9;
 }
+.auth__sign-btn.auth__order-btn--active .auth__sign-btn-one{
+    stop-color: #0061FF;
+}
+.auth__sign-btn.auth__order-btn--active .auth__sign-btn-two{
+    stop-color: #0061FF;
+}
 .dictionary{
     padding: 40px 165px 216px 165px;
 }
@@ -112,8 +124,17 @@
     max-width: 350px;
     transition: all 0.3s;
 }
+/*//под вопросом */
+/*.dictionary__search input:focus{*/
+/*    border-bottom: 1px solid #0061FF;*/
+/*    background: url(../img/dictionary/search-active.svg) no-repeat 95%;*/
+/*    background-position: right;*/
+/*    padding-left: 0;*/
+/*    padding-right: 25px;*/
+/*}*/
 .dictionary__search input::placeholder{
     font: 400 14px 'Monseratt';
+    color: #CCDFFF;
 }
 .dictionary__search > .dictionary__search--active{
     border-bottom: 1px solid #0061FF;
@@ -158,24 +179,37 @@
     /*color: #0061FF;*/
     background-color: #fff;
 }
-/*.header__burger span, .header__burger span:before, .header__burger span:after{*/
+/*.header__mobile-burger span, .header__mobile-burger span:before, .header__mobile-burger span:after{*/
 /*    display: block;*/
 /*    height: 2px;*/
 /*    width: 18px;*/
 /*    position: absolute;*/
 /*    left: 50%;*/
 /*    margin-left: -9px;*/
-/*    top: 50%;*/
+/*    !*top: 50%;*!*/
+/*    top: inherit;*/
 /*    margin-top: -1px;*/
 /*    background-color: #333;*/
 /*}*/
-/*.header__burger span:before{*/
-/*    content: '';*/
-/*    transition: all 0.2s;*/
-/*    margin-top: -5px;*/
-/*}*/
-/*.header__burger span:after{*/
-/*    content: '';*/
-/*    transition: all 02s;*/
-/*    margin-top: 3px;*/
-/*}*/
+
+.header__mobile-burger{
+    display: inline-block;
+    cursor: pointer;
+}
+.header__mobile-first, .header__mobile-second, .header__mobile-three{
+    width: 30px;
+    height: 2px;
+    margin: 10px 0;
+    transition: 0.4s;
+    background-color: #0061FF;
+}
+
+.change .header__mobile-first{
+    transform: translateY(12px) rotate(135deg);
+}
+.change .header__mobile-second{
+    transform: scale(0);
+}
+.change .header__mobile-three{
+    transform: translateY(-12px) rotate(-135deg);
+}
