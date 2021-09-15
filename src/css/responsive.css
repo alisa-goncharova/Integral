@@ -22,7 +22,7 @@
 }
 @media(max-width: 500px){
     .header{
-        padding: 46px 15px 0 15px;
+        padding: 17px 15px 0 15px;
         justify-content: space-between;
     }
     .header__navs{
@@ -57,6 +57,36 @@
         padding: 17px 8px 17px 8px;
         font: 500 12px 'Monseratt';
         line-height: 13px;
+    }
+    .auth__modal{
+        background: white;
+        width: 100%;
+        max-width: inherit;
+    }
+    .auth__modal--show{
+        top: 100px;
+        padding: 24px 50px 0 50px;
+    }
+    .modal__title {
+        font: 400 14px 'Monseratt';
+        line-height: 19px;
+    }
+    .modal__icon{
+        justify-content: space-between;
+    }
+    .header {
+        justify-content: inherit;
+        /*padding: 46px 50px 0 50px;*/
+    }
+    .header__sign--show{
+        padding: 46px 50px 0 50px;
+    }
+    .header__mobile-burger {
+        margin-left: auto;
+    }
+    .header__mobile-modal{
+        /*display: block;*/
+        overflow: hidden;
     }
 }
 @media(max-width: 320px){
