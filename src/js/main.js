@@ -16,6 +16,16 @@ navBar.addEventListener('click', function(event) {
     });
     // Переключим для элемента на который кликнули класс
     event.target.classList.add('header__nav-item--active');
+
+    // if(document.querySelector('.header__nav-item.header__nav-all').classList.contains('header__nav-item--active')){
+    //     document.querySelector('.svg__default').classList.add('none');
+    //     console.log('есть класс')
+    // }
+    // if(document.querySelector('.header__nav-item.header__nav-all').classList.contains('header__nav-item--active') === false){
+    //     document.querySelector('.svg__default').classList.remove('none');
+    //     console.log('нет класса')
+    // }
+
 });
 // конец
 
@@ -42,17 +52,7 @@ signBtn.onclick = function(){
 // // Поиск
 let input = document.querySelector('.dictionary__search input');
 // // Реакция на введение символов
-// input.oninput = function (){
-//     if(input.value.length > 0){
-//         input.classList.add('dictionary__search--active');
-//         input.setAttribute('placeholder', '');
-//     } else {
-//         input.classList.remove('dictionary__search--active');
-//         input.setAttribute('placeholder', 'Начните писать...');
-//         //удаление активной плитки
-//         liTmp.classList.remove('active');
-//     }
-// }
+
 //Реакция на нажатие input
 input.onfocus = function (){
     input.classList.add('dictionary__search--active');
@@ -140,3 +140,14 @@ mobileNavs.addEventListener('click', function(event) {
     // Переключим для элемента на который кликнули класс
     event.target.classList.add('header__nav-item--active');
 });
+
+document.addEventListener("DOMContentLoaded", ready);
+function ready(){
+    let colletion = document.querySelector('.header__nav-item');
+    for(let i = 0; i < colletion.length; i++){
+        if(i > 7 && colletion[i].classList.contains('header__nav-all') === false){
+            colletion[i].classList.add('none');
+        }
+    }
+    console.log('загрузка страницы');
+}

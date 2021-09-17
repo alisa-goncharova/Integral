@@ -41,10 +41,11 @@
         margin: 0 46px 0 0;
     }
     .dictionary__title {
-        font: 600 14px 'Monseratt';
+        font: 700 18px 'Monseratt';
         line-height: 19px;
         max-width: 340px;
         margin: 0 0 43px 0;
+        text-transform: uppercase;
     }
     .dictionary__search input{
         max-width: inherit;

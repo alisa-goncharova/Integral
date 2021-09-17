@@ -222,11 +222,11 @@ input:checked + .modal__slider:before {
 }
 /*модальное окно конец*/
 .dictionary{
-    padding: 40px 165px 216px 165px;
+    padding: 30px 165px 200px 165px;
 }
 .dictionary__title{
-    font: 700 16px 'Monseratt';
-    line-height: 16px;
+    font: 700 24px 'Monseratt';
+    line-height: 19px;
     color: #172D4E;
     margin: 0 0 53px 0;
 }
@@ -350,9 +350,93 @@ input:checked + .modal__slider:before {
     margin: 0 0 30px 0;
     transition: all 0.3s;
 }
-.header__nav-item--active{
-    color: #0061FF;
+.footer{
+    padding: 10px 0px 9px 48px;
+    border-top: 1px solid #CCDFFF;
 }
-.hidden{
-    overflow: hidden;
+.footer__info{
+    font: 400 14px 'Monseratt';
+    line-height: 19px;
+    color: #4675AC;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*.header__nav-item--active{*/
+/*    color: #0061FF;*/
+/*}*/
+/*.header__navs{*/
+/*    display: inherit;*/
+/*}*/
+
+
+
+/*.hidden{*/
+/*    overflow: hidden;*/
+/*}*/
+/*.header__all{*/
+/*    display: flex;*/
+/*}*/
+/*.header__item-all{*/
+/*    margin: 0 5px 0 0;*/
+/*}*/
+/*.header__triangle{*/
+/*    fill: #172D4E;*/
+/*}*/
+/*.header__triangle svg:hover{*/
+/*    fill: #0061FF;*/
+/*}*/
+/*.svg__default{*/
+/*    display: none;*/
+/*}*/
+/*.svg__active{*/
+/*    !*display: none;*!*/
+/*}*/
+.header__navs{
+    display: flex;
+}
+.header__nav-all{
+    display: flex;
+    align-items: center;
+}
+.header__trinagles{
+    margin: 0 0 0 5px;
+}
+.header__nav-item:hover > .header__trinagles > .svg__default{
+    fill: #0061FF;
+}
+.header__nav-item > .header__trinagles > .svg__active{
+    display: none;
+}
+.header__nav-item.header__nav-all.header__nav-item--active > .header__trinagles > .svg__active{
+    display: flex;
+}
+.header__nav-item.header__nav-all.header__nav-item--active > .header__trinagles > .svg__default{
+    display: none;
+}
+.header__nav-item.header__nav-all > .header__trinagles > .svg__default{
+    display: flex;
+}
+
+
+
+/*.header__nav-item.header__nav-all > .header__trinagles > .svg__active{*/
+/*    display: none;*/
+/*}*/
+/*.header__nav-item.header__nav-all > .header__trinagles > .svg__default{*/
+/*    display: flex;*/
+/*}*/
+/*.header__nav-item.header__nav-all > .header__trinagles > .svg__default{*/
+/*    display: none;*/
+/*}*/
