@@ -6,26 +6,36 @@ order.onclick = function(){
     order.classList.toggle('disabled');
 }
 //нажатие на пункт списка
+// let navBar = document.querySelector('.header__navs');
+// let navLinks = document.querySelectorAll('.header__navs a');
+// navBar.addEventListener('click', function(event) {
+//     event.preventDefault(); // остановим работу ссылки, нам же надо поменять класс а не уйти со страницы
+//     // Пробежимся по ссылкам и удалим active класс, если вдруг он где-то есть
+//     navLinks.forEach(function(element, index) {
+//         element.classList.remove('header__nav-item--active');
+//     });
+//     // Переключим для элемента на который кликнули класс
+//     event.target.classList.add('header__nav-item--active');
+//
+//
+// });
+//нажатие на пункт списка
 let navBar = document.querySelector('.header__navs');
 let navLinks = document.querySelectorAll('.header__navs a');
 navBar.addEventListener('click', function(event) {
     event.preventDefault(); // остановим работу ссылки, нам же надо поменять класс а не уйти со страницы
+    let activeClassName = 'header__nav-item--active';
     // Пробежимся по ссылкам и удалим active класс, если вдруг он где-то есть
-    navLinks.forEach(function(element, index) {
-        element.classList.remove('header__nav-item--active');
+    navLinks.forEach(function(element) {
+        element.classList.remove(activeClassName);
     });
+
     // Переключим для элемента на который кликнули класс
-    event.target.classList.add('header__nav-item--active');
-
-    // if(document.querySelector('.header__nav-item.header__nav-all').classList.contains('header__nav-item--active')){
-    //     document.querySelector('.svg__default').classList.add('none');
-    //     console.log('есть класс')
-    // }
-    // if(document.querySelector('.header__nav-item.header__nav-all').classList.contains('header__nav-item--active') === false){
-    //     document.querySelector('.svg__default').classList.remove('none');
-    //     console.log('нет класса')
-    // }
-
+    if(event.target.classList.value.indexOf(activeClassName) > 0) {
+        event.target.classList.toggle(activeClassName);
+    } else {
+        event.target.classList.add(activeClassName);
+    }
 });
 // конец
 
@@ -150,4 +160,58 @@ function ready(){
         }
     }
     console.log('загрузка страницы');
+}
+
+
+
+// ---------------------------------------------------------------------
+document.addEventListener('DOMContentLoaded', (event)=>{
+    let headerMenu = document.querySelectorAll('.header__navs-wrap a');
+    let headerSearch = document.querySelector('.header__search');
+    if(headerMenu.length > 7){
+        for(let i = 7; i < headerMenu.length; i++){
+            // headerMenu[i].remove();
+            headerMenu[i].classList.add('none');
+        }
+        headerSearch.classList.add('none');
+    }
+})
+
+let itemAll = document.querySelector('.header__nav-all');
+itemAll.addEventListener('click', ()=>{
+    document.querySelector('.all__modal').classList.toggle('all__modal-show');
+    // document.querySelectorAll('.all__modal-items a').remove();
+    if(document.querySelector('.all__modal').classList.contains('all__modal-show')){
+        document.querySelector('.header__navs-wrap').classList.add('none');
+        document.querySelector('.header__search').classList.remove('none');
+        body.classList.add('hidden');
+        //вставка скопированных элементов
+        let headerMenu = document.querySelectorAll('.header__navs-wrap a');
+        let headerModal = document.querySelector('.all__modal-items');
+        let headerModalItems = document.querySelectorAll('.all__modal-items a');
+        if(headerModalItems.length === 0){
+        headerMenu.forEach(function (element, index){
+            headerModal.innerHTML += `<a href="${element.href}" class="header__nav-item">${element.innerText}</a>`;
+
+        });
+        }
+    } else{
+        document.querySelector('.header__navs-wrap').classList.remove('none');
+        document.querySelector('.header__search').classList.add('none');
+        body.classList.remove('hidden');
+    }
+})
+// поиск в мобильном меню (при нажатии на кнопку "все")
+let inputModal = document.querySelector('.header__search input');
+// // Реакция на введение символов
+
+//Реакция на нажатие input
+inputModal.onfocus = function (){
+    inputModal.classList.add('header__search--active');
+    inputModal.setAttribute('placeholder', '');
+}
+//Реакция после нажатия на input
+inputModal.onblur = function (){
+    inputModal.classList.remove('header__search--active');
+    inputModal.setAttribute('placeholder', 'Начните писать...');
 }
