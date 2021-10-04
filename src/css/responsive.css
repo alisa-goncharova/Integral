@@ -1,6 +1,14 @@
 @media(max-width: 2560px){
+    .layout{
+        max-width: 100%;
+    }
     .header__mobile-burger{
         display: none;
+    }
+}
+@media(max-width: 1470px){
+    .layout{
+        max-width: 1440px;
     }
 }
 @media(max-width: 770px){
